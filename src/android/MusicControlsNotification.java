@@ -1,29 +1,23 @@
 package com.homerours.musiccontrols;
 
-import org.apache.cordova.CordovaInterface;
-
-
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.File;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.Random;
-
-import android.util.Log;
 import android.R;
-import android.content.Context;
 import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.os.Build;
-import android.graphics.BitmapFactory;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
+
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 
 public class MusicControlsNotification {
 	private Activity cordovaActivity;
@@ -174,7 +168,7 @@ public class MusicControlsNotification {
 			nbControls++;
 			Intent previousIntent = new Intent("music-controls-previous");
 			PendingIntent previousPendingIntent = PendingIntent.getBroadcast(context, 1, previousIntent, 0);
-			builder.addAction(android.R.drawable.ic_media_rew, "", previousPendingIntent);
+			builder.addAction(setDrwable("ic_backward"), "", previousPendingIntent);
 		}
 		if (infos.isPlaying){
 			/* Pause  */
@@ -194,7 +188,7 @@ public class MusicControlsNotification {
 			nbControls++;
 			Intent nextIntent = new Intent("music-controls-next");
 			PendingIntent nextPendingIntent = PendingIntent.getBroadcast(context, 1, nextIntent, 0);
-			builder.addAction(android.R.drawable.ic_media_ff, "", nextPendingIntent);
+			builder.addAction(setDrwable("ic_forward"), "", nextPendingIntent);
 		}
 		/* Close */
 		if (infos.hasClose){
@@ -215,7 +209,9 @@ public class MusicControlsNotification {
 		this.notificationBuilder = builder;
 	}
 
-
+	private int setDrwable(String icName){
+		return cordovaActivity.getResources().getIdentifier(icName, "drawable", cordovaActivity.getPackageName());
+	}
 	public void destroy(){
 		this.notificationManager.cancel(this.notificationID);
 	}

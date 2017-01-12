@@ -41,6 +41,19 @@
         <source-file src="src/android/MusicControlsNotificationKiller.java" target-dir="src/com/homerours/musiccontrols" />
         <source-file src="src/android/MusicControlsInfos.java" target-dir="src/com/homerours/musiccontrols" />
         <source-file src="src/android/KillBinder.java" target-dir="src/com/homerours/musiccontrols" />
+
+        <resource-file src="src/android/res/drawable-hdpi/ic_backward.png" target="res/drawable-hdpi/ic_backward.png" />
+        <resource-file src="src/android/res/drawable-mdpi/ic_backward.png" target="res/drawable-mdpi/ic_backward.png" />
+        <resource-file src="src/android/res/drawable-xhdpi/ic_backward.png" target="res/drawable-xhdpi/ic_backward.png" />
+        <resource-file src="src/android/res/drawable-xxhdpi/ic_backward.png" target="res/drawable-xxhdpi/ic_backward.png" />
+        <resource-file src="src/android/res/drawable-xxxhdpi/ic_backward.png" target="res/drawable-xxxhdpi/ic_backward.png" />
+
+        <resource-file src="src/android/res/drawable-hdpi/ic_forward.png" target="res/drawable-hdpi/ic_forward.png" />
+        <resource-file src="src/android/res/drawable-mdpi/ic_forward.png" target="res/drawable-mdpi/ic_forward.png" />
+        <resource-file src="src/android/res/drawable-xhdpi/ic_forward.png" target="res/drawable-xhdpi/ic_forward.png" />
+        <resource-file src="src/android/res/drawable-xxhdpi/ic_forward.png" target="res/drawable-xxhdpi/ic_forward.png" />
+        <resource-file src="src/android/res/drawable-xxxhdpi/ic_forward.png" target="res/drawable-xxxhdpi/ic_forward.png" />
+
     </platform>
 
     <!-- windows -->
